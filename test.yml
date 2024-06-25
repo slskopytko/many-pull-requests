@@ -1,0 +1,16 @@
+- pipeline: "test"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/master"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Send Datadog notification"
+    type: "DATADOG"
+    region: "NA"
+    title: "$BUDDY_PIPELINE_NAME execution #$BUDDY_EXECUTION_ID"
+    content: "$BUDDY_EXECUTION_REVISION - $BUDDY_EXECUTION_REVISION_MESSAGE"
+    tags:
+    - ""
+    alert_type: "success"
+    integration_hash: "3DmJqAMrlNbWjG0gayg5Kx2n6z"
