@@ -1,0 +1,17 @@
+- pipeline: "ef"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/master"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Purge cache at buddy tests (E233W26XODM27Q)"
+    type: "CLOUD_FRONT"
+    distribution_id: "E233W26XODM27Q"
+    base_url: "hhh"
+    integration_hash: "E9w3Bk61YQdJ7oxoeOGpJZn4W8"
+  - action: "Purge cache at buddy.recipes"
+    type: "CLOUDFLARE"
+    base_url: "https://buddy.recipes"
+    zone_id: "f00e1e106ba63e658477bf7393ad83f1"
+    integration_hash: "0omRy83X46dBRWGxd79jAkGxvD"
